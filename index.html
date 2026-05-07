@@ -1,3 +1,51 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"/><title>Realmfall RTS Prototype V2</title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-title" content="Realmfall RTS"/><link rel="manifest" href="manifest.json"/><link rel="stylesheet" href="style.css"/></head>
-<body><div id="gameShell"><canvas id="game"></canvas><div id="topBar"><div class="brand">⚔ Realmfall</div><div class="resource">🪵 <span id="wood">160</span></div><div class="resource">🍖 <span id="food">110</span></div><div class="resource">⚔ <span id="unitCount">0</span></div></div><div id="message">Tap a unit to select. Two-finger drag box selects multiple units.</div><canvas id="minimap"></canvas><div id="selectedCard"><div id="selectedName">No unit selected</div><div id="selectedInfo">Tap a worker or soldier.</div></div><div id="panel"><button id="btnWorker">Train<br>Worker<br><small>40 Food</small></button><button id="btnSoldier">Train<br>Soldier<br><small>50F 20W</small></button><button id="btnArcher">Train<br>Archer<br><small>45F 30W</small></button><button id="btnTower">Place<br>Tower<br><small>70 Wood</small></button><button id="btnGather">Gather</button><button id="btnAttack">Attack</button></div><div id="hint"><b>iPhone controls:</b> 1 finger pan • tap unit select • selected units move/attack • 2-finger drag selects group • pinch zoom</div></div><script src="game.js"></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Realmfall RTS V3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Realmfall RTS" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="gameShell">
+  <canvas id="game"></canvas>
+  <div id="topBar">
+    <div class="brand">⚔ REALMFALL RTS</div>
+    <div class="resource">🛢️ Resource: <span id="resource">220</span></div>
+    <div class="resource">👥 <span id="unitCount">0</span>/60</div>
+  </div>
+  <div id="message">One resource. Three ways to gather: Farm, Chop, Mine.</div>
+  <canvas id="minimap"></canvas>
+  <div id="selectedCard">
+    <div id="selectedName">No unit selected</div>
+    <div id="selectedInfo">Tap or two-finger drag select.</div>
+    <div id="counterInfo">Spear > Cavalry > Archer > Swordsman > Spear</div>
+  </div>
+  <div id="helpPanel">
+    <b>Unit Counters</b><br>
+    Sword: strong vs Spear, weak vs Archer<br>
+    Spear: strong vs Cavalry, weak vs Sword<br>
+    Archer: strong vs Sword, weak vs Cavalry<br>
+    Cavalry: strong vs Archer, weak vs Spear<br><br>
+    Strong = +50% damage. Weak = -50% damage.
+  </div>
+  <div id="panel">
+    <button id="btnWorker">Worker<br><small>35</small></button>
+    <button id="btnSword">Sword<br><small>55</small></button>
+    <button id="btnSpear">Spear<br><small>50</small></button>
+    <button id="btnArcher">Archer<br><small>60</small></button>
+    <button id="btnCavalry">Cavalry<br><small>90</small></button>
+    <button id="btnFarm">Farm<br><small>90</small></button>
+    <button id="btnTower">Tower<br><small>120</small></button>
+    <button id="btnGather">Chop</button>
+    <button id="btnMine">Mine</button>
+    <button id="btnAttack">Attack</button>
+  </div>
+  <div id="hint">1 finger pan • pinch zoom • tap select • two-finger drag group select • workers gather from trees/mines/farms</div>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
