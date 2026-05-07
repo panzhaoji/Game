@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Realmfall RTS V3</title>
+  <title>Realmfall RTS V4</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Realmfall RTS" />
@@ -10,42 +10,57 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div id="gameShell">
-  <canvas id="game"></canvas>
-  <div id="topBar">
-    <div class="brand">⚔ REALMFALL RTS</div>
-    <div class="resource">🛢️ Resource: <span id="resource">220</span></div>
-    <div class="resource">👥 <span id="unitCount">0</span>/60</div>
+  <div id="gameShell">
+    <canvas id="game"></canvas>
+
+    <div id="topBar">
+      <div class="brand">⚔ REALMFALL RTS V4</div>
+      <div class="resource">🛢️ Resource: <span id="resource">260</span></div>
+      <div class="resource">👥 <span id="unitCount">0</span>/70</div>
+      <button id="menuBtn" class="smallBtn">☰</button>
+    </div>
+
+    <div id="message">V4: animated sprites, terrain textures, better selection, fog of war.</div>
+
+    <canvas id="minimap"></canvas>
+
+    <div id="selectedCard">
+      <div id="selectedName">No unit selected</div>
+      <div id="selectedInfo">Tap or two-finger drag select.</div>
+      <div id="counterInfo">Counters: Spear > Cavalry > Archer > Swordsman > Spear</div>
+    </div>
+
+    <div id="helpPanel">
+      <h3>Combat Matrix</h3>
+      <table>
+        <tr><th>Unit</th><th>Strong vs</th><th>Weak vs</th></tr>
+        <tr><td>Swordsman</td><td>Spearmen</td><td>Archers</td></tr>
+        <tr><td>Spearman</td><td>Cavalry</td><td>Swordsmen</td></tr>
+        <tr><td>Archer</td><td>Swordsmen</td><td>Cavalry</td></tr>
+        <tr><td>Cavalry</td><td>Archers</td><td>Spearmen</td></tr>
+      </table>
+      <p><b>Resource:</b> farms, chopping trees, and mining deposits.</p>
+      <p><b>Fog:</b> explored areas stay dim, unseen areas are hidden.</p>
+    </div>
+
+    <div id="panel">
+      <button id="btnWorker">Worker<br><small>35</small></button>
+      <button id="btnSword">Sword<br><small>55</small></button>
+      <button id="btnSpear">Spear<br><small>50</small></button>
+      <button id="btnArcher">Archer<br><small>60</small></button>
+      <button id="btnCavalry">Cavalry<br><small>90</small></button>
+      <button id="btnFarm">Farm<br><small>90</small></button>
+      <button id="btnTower">Tower<br><small>120</small></button>
+      <button id="btnGather">Chop</button>
+      <button id="btnMine">Mine</button>
+      <button id="btnAttack">Attack</button>
+    </div>
+
+    <div id="hint">
+      1 finger pan • pinch zoom • tap unit select • two-finger drag group select • tap minimap to jump • Add to Home Screen from Safari
+    </div>
   </div>
-  <div id="message">One resource. Three ways to gather: Farm, Chop, Mine.</div>
-  <canvas id="minimap"></canvas>
-  <div id="selectedCard">
-    <div id="selectedName">No unit selected</div>
-    <div id="selectedInfo">Tap or two-finger drag select.</div>
-    <div id="counterInfo">Spear > Cavalry > Archer > Swordsman > Spear</div>
-  </div>
-  <div id="helpPanel">
-    <b>Unit Counters</b><br>
-    Sword: strong vs Spear, weak vs Archer<br>
-    Spear: strong vs Cavalry, weak vs Sword<br>
-    Archer: strong vs Sword, weak vs Cavalry<br>
-    Cavalry: strong vs Archer, weak vs Spear<br><br>
-    Strong = +50% damage. Weak = -50% damage.
-  </div>
-  <div id="panel">
-    <button id="btnWorker">Worker<br><small>35</small></button>
-    <button id="btnSword">Sword<br><small>55</small></button>
-    <button id="btnSpear">Spear<br><small>50</small></button>
-    <button id="btnArcher">Archer<br><small>60</small></button>
-    <button id="btnCavalry">Cavalry<br><small>90</small></button>
-    <button id="btnFarm">Farm<br><small>90</small></button>
-    <button id="btnTower">Tower<br><small>120</small></button>
-    <button id="btnGather">Chop</button>
-    <button id="btnMine">Mine</button>
-    <button id="btnAttack">Attack</button>
-  </div>
-  <div id="hint">1 finger pan • pinch zoom • tap select • two-finger drag group select • workers gather from trees/mines/farms</div>
-</div>
-<script src="game.js"></script>
+
+  <script src="game.js"></script>
 </body>
 </html>

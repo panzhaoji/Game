@@ -1,1 +1,9 @@
-{"name":"Realmfall RTS V3","short_name":"Realmfall","start_url":"index.html","display":"standalone","background_color":"#111111","theme_color":"#3b2a16","orientation":"landscape"}
+{
+  "name": "Realmfall RTS V4",
+  "short_name": "Realmfall",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#090b09",
+  "theme_color": "#3b2a16",
+  "orientation": "landscape"
+}
